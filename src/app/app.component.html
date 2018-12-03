@@ -2,6 +2,7 @@
   <div class="alert alert-error" *ngIf="error">Geolocation not supported by browser</div>
   <h1>PWA with geoloc and camera</h1>
   <div class="mt-5">
+    <input type="file" accept="image/*">
     <div>{{ position?.coords?.longitude }} - {{ position?.coords?.latitude }}</div>
     <button class="btn btn-primary mt-5" (click)="updatePosition()">Update position</button>
   </div>
