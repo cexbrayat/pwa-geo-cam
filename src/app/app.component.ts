@@ -6,5 +6,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'pwa-geo-cam';
+  position: Position;
+  error = false;
+
+  constructor() {
+    if (navigator.geolocation) {
+      this.updatePosition();
+    } else {
+      this.error = true;
+    }
+  }
+
+  updatePosition() {
+    navigator.geolocation.getCurrentPosition(pos => this.position = pos);
+  }
 }
